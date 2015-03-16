@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "compression": "^1.4.3",
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "jasmine": "^2.2.1"
   },
   "engines": {
     "node": "0.12.x"
