@@ -2,6 +2,7 @@
   "name": "ScrumBoard",
   "description": "ScrumBoard for Web Engineering 2 module at ZHAW",
   "version": "0.0.1",
+  "author": "Dominic Schlegel <schledom@students.zhaw.ch>",
   "private": true,
   "repository": {
     "type": "git",
