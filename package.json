@@ -6,10 +6,14 @@
     "type": "git",
     "url": "https://github.engineering.zhaw.ch/schledom/ScrumBoard"
   },
- "scripts": {
+  "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "node": "0.0.0"
+  },
+ "engines": {
+    "node": "0.12.x"
   }
 }
