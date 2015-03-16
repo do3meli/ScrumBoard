@@ -2,6 +2,7 @@
   "name": "ScrumBoard",
   "description": "ScrumBoard for Web Engineering 2 module at ZHAW",
   "version": "0.0.1",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.engineering.zhaw.ch/schledom/ScrumBoard"
@@ -10,10 +11,10 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.12.2",
-    "node": "0.0.0"
+    "compression": "^1.4.3",
+    "express": "^4.12.2"
   },
- "engines": {
+  "engines": {
     "node": "0.12.x"
   }
 }
