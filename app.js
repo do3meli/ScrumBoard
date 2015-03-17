@@ -13,9 +13,6 @@ app.use(compression());
 app.set('view engine', 'jade');
 app.set('views', './views');
 
-// define my routes
-var routes = require('./routes/index');
-
 // and now set my routes
 app.use('/', routes);
 
