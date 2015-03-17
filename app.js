@@ -1,16 +1,23 @@
 // define constant for later user
 const
-  express = require('express'),			// require expresss framework
+  express = require('express'),				// require expresss framework
   compression = require('compression'),		// create compression for http responses
-  app = express();				// make an express app
+  app = express(),							// make an express app
+  routes = require('./routes/index');		// define default route
+
 
 // set compression for app responses
 app.use(compression());
 
-// this defines what happens if the root directory is called
-app.get('/', function(request, response) {
-  response.send("hello");
-});
+// set jade as our view engine and define ./views directory as source
+app.set('view engine', 'jade');
+app.set('views', './views');
+
+// define my routes
+var routes = require('./routes/index');
+
+// and now set my routes
+app.use('/', routes);
 
 // ok start the server and listen on port 8080
 app.listen(process.env.PORT || 8080);
