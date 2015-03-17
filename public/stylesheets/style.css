@@ -8,7 +8,7 @@ a {
 }
 
 #done {
-	background-color: #32cd32;
+	background-color: #3cb371;
 } 
 
 #todo {
@@ -17,4 +17,19 @@ a {
 
 #inprogress {
 	background-color: #ffe4b5;
+}
+
+#board {
+	height: 500px;
+}
+
+#board div {
+	float: left;
+	width: 33%;
+	text-align: center;
+	height: 100%;
+}
+
+#footer {
+	margin-top: 30px;
 }
