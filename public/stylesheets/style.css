@@ -1,0 +1,20 @@
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00B7FF;
+}
+
+#done {
+	background-color: #32cd32;
+} 
+
+#todo {
+	background-color: #4682b4;
+}
+
+#inprogress {
+	background-color: #ffe4b5;
+}
