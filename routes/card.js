@@ -12,31 +12,28 @@ router.param('card_id', function(req, res, next, id) {
 router.route('/').
     get(function(req, res, next) {
         var all_cards = card.getAllEntries();
-        res.render('card/index', { cards: all_cards });
-    });
-
-router.route('/new').
-    get(function(req, res, next) {
-        res.render('card/new');
+        res.send(all_cards);
     }).
     
     post(function(req, res, next) {
        card.create( { title: req.body.title, text: req.body.text } );
-       res.redirect('/card');
+       res.send();
     });
-    
-    
+
+
 router.route('/:card_id').
     get(function(req, res, next) {
-        res.render('card/show', { card: req.card_item });
+        res.send( req.card_item);
+    }).
+    
+    put(function(req, res, next) {
+        res.send( req.card_item);
+    }).
+    
+    delete(function(req, res, next) {
+       card.remove( req.card_item.id );
+       res.send();
     });
  
-router.route('/:card_id/delete').
-    post(function(req, res, next) {
-       card.remove( req.card_item.id );
-       res.redirect('/card');
-    });
-   
-    
 
 module.exports = router;
