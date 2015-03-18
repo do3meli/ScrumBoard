@@ -14,12 +14,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // and now set my routes
-app.get('/card', cards.findAll);
-app.get('/card/:id', cards.findById);
-app.post('/card', cards.addCard);
-app.put('/card/:id', cards.updateCard);
-app.delete('/card/:id', cards.deleteCard);
-
+app.use('/card', cards);
 
 // ok start the server and listen on port 8080
 app.listen(process.env.PORT || 8080);
