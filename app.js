@@ -4,7 +4,7 @@ const
   compression = require('compression'),		// create compression for http responses
   path = require('path'),			        		// we need path to get the dir name
   app = express(),						          	// make an express app
-  cards = require('./routes/card'),		  	// define route for card
+  cards = require('./routes/card');		  	// define route for card
   
 
 // set compression for app responses
