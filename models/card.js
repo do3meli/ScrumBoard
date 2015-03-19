@@ -4,18 +4,18 @@ var Board = {
     // our cards array where we store everything
     cards: [
         {
-            id: '1',
-            title: 'foo',
-            descr: 'description 1',
+            id: "1",
+            title: "foo",
+            descr: "description 1",
             rating: "2",
             responsible: "test person 1",
             stage: "todo"
         },
         
         {
-            id: '0',
-            title: 'bar',
-            descr: 'description 2',
+            id: "0",
+            title: "bar",
+            descr: "description 2",
             rating: "1",
             responsible: "test person 2",
             stage: "done"
@@ -35,6 +35,7 @@ var Board = {
 	// JavaScript doesn't have a real clone function
     // This is good enough for simple, data-only objects
     clone: function (data) {
+        console.log(data);
         return JSON.parse(JSON.stringify(data));
     },
 	

@@ -16,7 +16,7 @@ router.route('/').
     }).
     
     post(function(req, res, next) {
-       card.create( { title: req.body.title, text: req.body.text } );
+       card.create( );
        res.send();
     });
 
