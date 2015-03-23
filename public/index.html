@@ -27,11 +27,12 @@
         <a href="/card/new">New Card</a>
     </footer>
 
-<div id="book-list"></div>
 
-<script type="text/template" id="book-template">
-    <div class="book"><%- title %></div>
+
+<script type="text/template" id="book-template">    
+		 <%= title %>  
 </script>
+
 
 <!-- ===========================================================================
 	javascript - placed at the end of the document so the pages load faster 
@@ -40,10 +41,11 @@
 <script src="js/lib/underscore-min.js"></script>
 <script src="js/lib/backbone-min.js"></script>
 
-<script src="js/app.js"></script>
+
 <script src="js/models/cards.js"></script>
 <script src="js/collections/cards.js"></script>
 <script src="js/views/cards.js"></script>
+<script src="js/app.js"></script>
 
 
 </body>

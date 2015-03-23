@@ -19,12 +19,21 @@ var Board = {
             rating: "1",
             responsible: "test person 2",
             stage: "done"
+        },
+        
+        {
+            id: "2",
+            title: "bar",
+            descr: "description 3",
+            rating: "1",
+            responsible: "test person 3",
+            stage: "inprogress"
         }
         
     ],
     
     // last id is set to 1 when initiated
-    last_id: 1,
+    last_id: 2,
 	
 	// function to generate the next id
     getNextId: function () {

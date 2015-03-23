@@ -12,7 +12,8 @@ router.param('card_id', function(req, res, next, id) {
 router.route('/').
     get(function(req, res, next) {
         var all_cards = card.getAllEntries();
-        res.send(all_cards);
+         res.setHeader('Content-Type', 'application/json');
+		 res.end(JSON.stringify(all_cards));
     }).
     
     post(function(req, res, next) {

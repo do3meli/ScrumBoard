@@ -11,6 +11,7 @@ app.cards = Backbone.Model.extend({
         stage: "todo"
     },
     
-    idAttribute: "id"
+    idAttribute: "id",
+    urlRoot: '/card'
     
 });
