@@ -10,8 +10,8 @@ const
 // set compression for app responses
 app.use(compression());
 
-// use body parser that is needed by the router
-app.use(bodyParser());
+// parse application/json
+app.use(bodyParser.json());
 
 // make the public folder accessible from root
 app.use(express.static(path.join(__dirname, 'public')));
