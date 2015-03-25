@@ -47,6 +47,10 @@ div.card-item img {
     right: 5px;	
 }
 
+img.trash {
+	right: 25px !important;
+}
+
 #footer {
 	margin-top: 30px;
 }
