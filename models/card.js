@@ -91,7 +91,17 @@ var Board = {
     clearAllEntries: function () {
         this.cards = [];
         this.last_id = 0;
-    }
+    },
+    
+    // used to update all values
+    updateCard: function(id,data){
+    	for (var attr in data) {
+			console.log('updating card id ' + id + " will set " + attr + " = " + data[attr]);
+			this.cards[id][attr] = data[attr];
+		}
+		return this.cards[id];		
+    }	    
+	     
 };
 
 
@@ -106,6 +116,9 @@ exports.clearAllEntries = function () {
     return Board.clearAllEntries();
 };
 
+exports.updateCard = function (id,data){
+	return Board.updateCard(id,data);
+};
 
 exports.create = function (data) {
     return Board.add(data);
