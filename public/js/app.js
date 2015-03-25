@@ -5,16 +5,20 @@ $(function() {
   // create collection
   app.mycards = new app.board();
    
-  // create view and give it the collection 
-  var cardsView = new app.CardsView({
-  	collection: app.mycards
-  });
  
+  
+  // initialize the router
+  app.Router = new app.Router();
+  Backbone.history.start();
+  
+ 
+  // define drop areas and callback function for drag&drop 
   $("#board div").droppable( {      
     hoverClass: 'hovered',
 	drop: handleCardDrop
   });
 
+  // drag and drop callback
   function handleCardDrop( event, ui ) {
    
     var cardNewState = $(event.target).attr('id');       

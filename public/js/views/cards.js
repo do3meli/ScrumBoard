@@ -2,6 +2,9 @@ var app = app || {};
 
 // View for all people
 app.CardsView = Backbone.View.extend({
+    
+  // track all sub views in this array
+  views: [],
   
   render: function(){
 	  
@@ -9,26 +12,30 @@ app.CardsView = Backbone.View.extend({
     hoverClass: 'hovered',
 	drop: handleCardDrop
 	
-  });
+    });
 	  
   },
   
   addCardView: function(item){
+	 
 	 var myCardView = new app.CardView({ model: item });
-	
+	 
+	 // add my newly created view to my array  
+	 this.views.push(myCardView);
+	 
 	 // render the model instance to whatever class is in the stage attribute from the model
 	 var myRenderedElement = $(myCardView.render().el);
 	 myRenderedElement.attr("id",item.get("id"));
 	 myRenderedElement.draggable({ containment: "#board" });
 	 
-	 
-	 	 
+	 // append it now to the DOM
 	 $('#' + item.get('stage')).append(myRenderedElement);
   },
  
   // this function is getting called when NEW object is getting created
   initialize: function(){
 
+  	  $("#board").show();         
   	 // fetch the data from the server
 	 this.collection.fetch({ reset: true });
 	 // subscribe to the reset command adn call addAll when above cmd is finished
@@ -36,8 +43,13 @@ app.CardsView = Backbone.View.extend({
   },
   
   addAll: function(){
-	  // iterate over the whole collection
-	  this.collection.each( this.addCardView, this); 
+	  
+	// before we add all views - lets destroy them
+	for(var i = 0; i< this.views.length; i++){
+    	this.views[i].destroy();
+    }
+	// iterate over the whole collection
+	this.collection.each( this.addCardView, this); 
   }
  
 });
@@ -54,6 +66,11 @@ app.CardView = Backbone.View.extend({
       this.$el.html( this.template(this.model.toJSON()));
       this.$el.addClass("card-item");
       return this;
+  },
+  
+  destroy: function(){
+      this.remove();
+      this.unbind();
   }
   
 });
