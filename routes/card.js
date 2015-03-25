@@ -17,8 +17,9 @@ router.route('/').
     }).
     
     post(function(req, res, next) {
-       card.create( );
-       res.send();
+       card.create( req.body );
+       res.setHeader('Content-Type', 'application/json');
+       res.end(JSON.stringify(req.card_item));
     });
 
 

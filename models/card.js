@@ -44,7 +44,6 @@ var Board = {
 	// JavaScript doesn't have a real clone function
     // This is good enough for simple, data-only objects
     clone: function (data) {
-        console.log(data);
         return JSON.parse(JSON.stringify(data));
     },
 	
@@ -54,8 +53,8 @@ var Board = {
         var data = this.clone(data);
         var id = this.getNextId();
         data.id = id;
-        data.publishedAt = new Date();
         this.cards.push(data);
+        console.log("added new card with id " + id);
         return data;
     },
 	
