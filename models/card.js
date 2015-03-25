@@ -52,7 +52,7 @@ var Board = {
     add: function (data) {
         var data = this.clone(data);
         var id = this.getNextId();
-        data.id = id;
+        data.id = id.toString();
         this.cards.push(data);
         console.log("added new card with id " + id);
         return data;

@@ -3,7 +3,7 @@ var app = app || {};
 app.cards = Backbone.Model.extend({
 
     defaults: {  
-        id: null,
+        id: "",
         title: "",
         descr: "",
         rating: "",
