@@ -28,7 +28,9 @@ router.route('/:card_id').
     }).
     
     put(function(req, res, next) {
-        res.send( req.card_item);
+        card.updateCard(req.params.card_id,req.body);
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(req.card_item));
     }).
     
     delete(function(req, res, next) {
