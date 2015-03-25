@@ -16,17 +16,21 @@
 
 <h1>ScrumBoard</h1>
 
+   
+ <div id="content">  
     <div id="board">
         <div id="todo"><h2>Todo</h2></div>
         <div id="inprogress"><h2>In Progress</h2></div>
         <div id="done"><h2>Done</h2></div>
     </div>
 
+	<div id="create"></div>
+
 	<footer id="footer">
         <a href="/">Home</a> |
-        <a href="/card/new">New Card</a>
+        <a href="#create">New Card</a>
     </footer>
-
+ </div>
 
 
 <script type="text/template" id="card-template">    
@@ -36,8 +40,28 @@
 		 <span id="rating">Rating: <%= rating %> </span><br>
 		 <span id="responsible">Responsible: <%= responsible %> </span>
 		 <img src="img/edit.png" width="16" class="edit">
-		 <img src="img/trash.png" width="16" class="trash">
+		 <img src="img/trash.png" width="16" class="trash"> 
+</script>
+
+<script type="text/template" id="create-template">    
+		<form id="addCard" action="">       
+         <span id="newTitleLable">Title: </span><input type="text" id="newTitle" /><br>
+         <span id="newDescriptionLable">Description: </span><input type="text" id="newDescription" /><br>
 		 
+		 <span id="newRatingLable">Rating: </span>
+		    <select id="newRating">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">5</option>
+			  <option value="4">8</option>
+			</select><br>
+         
+         <span id="newResponsibleLable">Responsible Person: </span><input type="text" id="newResponsible" /><br>
+         
+         <input type="submit" id="add-card" value="create" />
+         
+    	</form>
 </script>
 
 
@@ -52,6 +76,8 @@
 <script src="js/models/cards.js"></script>
 <script src="js/collections/cards.js"></script>
 <script src="js/views/cards.js"></script>
+<script src="js/views/create.js"></script>
+<script src="js/routes/cards.js"></script>
 <script src="js/app.js"></script>
 
 
