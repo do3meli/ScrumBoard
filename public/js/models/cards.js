@@ -12,6 +12,11 @@ app.cards = Backbone.Model.extend({
     },
     
     idAttribute: "id",
-    urlRoot: '/card'
+    urlRoot: '/card',
+    
+    setState: function(newState){
+      this.set({stage: newState});
+    }        
+
     
 });

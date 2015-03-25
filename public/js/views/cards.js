@@ -3,12 +3,27 @@ var app = app || {};
 // View for all people
 app.CardsView = Backbone.View.extend({
   
-  el: $('#todo ul'),
-  render: function(){},
+  render: function(){
+	  
+	$("#board div").droppable( {      
+    hoverClass: 'hovered',
+	drop: handleCardDrop
+	
+  });
+	  
+  },
   
   addCardView: function(item){
-	  var myCardView = new app.CardView({ model: item });
-	  this.$el.append(myCardView.render().el);
+	 var myCardView = new app.CardView({ model: item });
+	
+	 // render the model instance to whatever class is in the stage attribute from the model
+	 var myRenderedElement = $(myCardView.render().el);
+	 myRenderedElement.attr("id",item.get("id"));
+	 myRenderedElement.draggable({ containment: "#board" });
+	 
+	 
+	 	 
+	 $('#' + item.get('stage')).append(myRenderedElement);
   },
  
   // this function is getting called when NEW object is getting created
@@ -30,16 +45,14 @@ app.CardsView = Backbone.View.extend({
 // The View for a Person
 app.CardView = Backbone.View.extend({
   
-  tagName: 'li',
-  template: _.template( $('#book-template').html()),
+  // the template is in the index.html defined
+  template: _.template( $('#card-template').html()),
 
-  initialize: function(){
-      //this.render();
-      console.log(this.model);
-  },
-
+  initialize: function(){},
+  
   render: function(){
       this.$el.html( this.template(this.model.toJSON()));
+      this.$el.addClass("card-item");
       return this;
   }
   

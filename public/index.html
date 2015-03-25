@@ -17,9 +17,9 @@
 <h1>ScrumBoard</h1>
 
     <div id="board">
-        <div id="todo"><h2>Todo</h2><ul></ul></div>
-        <div id="inprogress"><h2>In Progress</h2><ul></ul></div>
-        <div id="done"><h2>Done</h2><ul></ul></div>
+        <div id="todo"><h2>Todo</h2></div>
+        <div id="inprogress"><h2>In Progress</h2></div>
+        <div id="done"><h2>Done</h2></div>
     </div>
 
 	<footer id="footer">
@@ -29,8 +29,14 @@
 
 
 
-<script type="text/template" id="book-template">    
-		 <%= title %>  
+<script type="text/template" id="card-template">    
+		 <span id="id">ID: <%= id %></span><br> 
+		 <span id="title">Title: <%= title %></span><br> 
+		 <span id="descr">Description: <%= descr %> </span><br>
+		 <span id="rating">Rating: <%= rating %> </span><br>
+		 <span id="responsible">Responsible: <%= responsible %> </span>
+		 <img src="img/edit.png" width="16" class="edit">
+		 
 </script>
 
 
@@ -38,9 +44,9 @@
 	javascript - placed at the end of the document so the pages load faster 
 ============================================================================ -->
 <script src="js/lib/jquery-2.1.3.min.js"></script>
+<script src="js/lib/jqueryui-1.11.4.min.js"></script>
 <script src="js/lib/underscore-min.js"></script>
 <script src="js/lib/backbone-min.js"></script>
-
 
 <script src="js/models/cards.js"></script>
 <script src="js/collections/cards.js"></script>
