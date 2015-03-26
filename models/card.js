@@ -74,6 +74,7 @@ var Board = {
             if (this.cards[i].id == id) {
                 var p = this.cards[i];
                 this.cards.splice(i, 1);
+                console.log("deleted card with id " + id);
                 return p;
             }
 
