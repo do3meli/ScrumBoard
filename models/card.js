@@ -4,7 +4,7 @@ var Board = {
     // our cards array where we store everything
     cards: [
         {
-            id: "1",
+            id: "0",
             title: "foo",
             descr: "description 1",
             rating: "2",
@@ -13,7 +13,7 @@ var Board = {
         },
         
         {
-            id: "0",
+            id: "1",
             title: "bar",
             descr: "description 2",
             rating: "1",
