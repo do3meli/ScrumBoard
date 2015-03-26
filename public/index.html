@@ -25,6 +25,7 @@
     </div>
 
 	<div id="create"></div>
+	<div id="edit"></div>
 
 	<footer id="footer">
         <a href="/">Home</a> |
@@ -39,8 +40,8 @@
 		 <span id="descr">Description: <%= descr %> </span><br>
 		 <span id="rating">Rating: <%= rating %> </span><br>
 		 <span id="responsible">Responsible: <%= responsible %> </span>
-		 <img src="img/edit.png" width="16" class="edit">
-		 <img src="img/trash.png" width="16" class="trash"> 
+		 <a href="#edit/<%= id %>"><img src="img/edit.png" width="16" class="edit"></a>
+		 <a href="#drop/<%= id %>"><img src="img/trash.png" width="16" class="trash"></a>
 </script>
 
 <script type="text/template" id="create-template">    
@@ -53,13 +54,13 @@
 			  <option value="1">1</option>
 			  <option value="2">2</option>
 			  <option value="3">3</option>
-			  <option value="4">5</option>
-			  <option value="4">8</option>
+			  <option value="5">5</option>
+			  <option value="8">8</option>
 			</select><br>
          
          <span id="newResponsibleLable">Responsible Person: </span><input type="text" id="newResponsible" /><br>
          
-         <input type="submit" id="add-card" value="create" />
+         <input type="submit" id="add-card" value="save" />
          
     	</form>
 </script>
@@ -77,6 +78,7 @@
 <script src="js/collections/cards.js"></script>
 <script src="js/views/cards.js"></script>
 <script src="js/views/create.js"></script>
+<script src="js/views/edit.js"></script>
 <script src="js/routes/cards.js"></script>
 <script src="js/app.js"></script>
 
