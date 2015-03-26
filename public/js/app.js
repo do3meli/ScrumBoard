@@ -13,7 +13,7 @@ $(function() {
   
  
   // define drop areas and callback function for drag&drop 
-  $("#board div").droppable( {      
+  $("#board div").not('.card-item').droppable( {      
     hoverClass: 'hovered',
 	drop: handleCardDrop
   });
