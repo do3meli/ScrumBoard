@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 // make the public folder accessible from root
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'spec')));
 
 // and now set my routes
 app.use('/card', cards);
